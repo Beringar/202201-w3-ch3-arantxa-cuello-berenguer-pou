@@ -1,6 +1,8 @@
 import Component from "./Component.js";
 
 class SerieComponent extends Component {
+  series;
+
   constructor(parentElement, htmlTag, actionOnClick) {
     super(parentElement, htmlTag);
 
