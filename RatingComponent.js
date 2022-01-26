@@ -2,7 +2,7 @@ import Component from "./Component.js";
 
 class RatingComponent extends Component {
   constructor(parentElement, className, icon, actionOnClick) {
-    super(parentElement, className, "button");
+    super(parentElement, className);
 
     this.generateHTML();
 

@@ -2,7 +2,7 @@ import Component from "./Component.js";
 
 class SerieComponent extends Component {
   constructor(parentElement, htmlTag, actionOnClick) {
-    super();
+    super(parentElement, htmlTag);
 
     this.actionOnClick = actionOnClick;
 
