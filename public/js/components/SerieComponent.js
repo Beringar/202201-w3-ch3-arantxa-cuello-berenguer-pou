@@ -1,34 +1,35 @@
 import Component from "./Component.js";
 
 class SerieComponent extends Component {
-  series;
+  serie;
+  actionOnClick;
 
-  constructor(parentElement, htmlTag, actionOnClick) {
-    super(parentElement, htmlTag);
-
+  constructor(parentElement, htmlTag, serie, actionOnClick) {
+    super(parentElement, "serie", htmlTag);
+    this.serie = serie;
     this.actionOnClick = actionOnClick;
 
-    this.generateHTML();
+    this.generateHTML(serie);
     this.addListeners();
   }
 
   generateHTML() {
+    this.element.dataset.serie = this.serie.id;
     this.element.innerHTML = ` 
-              <li class="serie">
                 <img
                   class="serie__poster"
-                  src="img/${this.series.poster}"
-                  alt="The ${this.series.name} poster"
+                  src="${this.serie.poster}"
+                  alt="The ${this.serie.name} poster"
                 />
-                <h4 class="serie__title">${this.series.name}</h4>
-                <p class="serie__info">${this.series.creator}</p>
-               
-                <i class="fas fa-times-circle icon--delete"></i>
-              </li>`;
+                <h4 class="serie__title">${this.serie.name}</h4>
+                <p class="serie__info">${this.serie.creator} (${this.serie.year})</p>
+                <i class="fas fa-times-circle icon--delete"></i>`;
   }
 
   addListeners() {
-    this.element.addEventListener("click", this.actionOnClick);
+    this.element
+      .querySelector(".icon--delete")
+      .addEventListener("click", this.actionOnClick);
   }
 }
 
