@@ -1,6 +1,8 @@
 import Component from "./Component.js";
 
 class InfoComponent extends Component {
+  
+
   constructor(parentElement, htmlTag) {
     super(parentElement, htmlTag);
 
@@ -8,7 +10,7 @@ class InfoComponent extends Component {
   }
 
   generateHTML() {
-    this.element.textContent = `You have watched  movies`;
+    this.element.textContent = `You have watched ${this.} movies`;
   }
 }
 
