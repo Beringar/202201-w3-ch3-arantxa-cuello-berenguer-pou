@@ -9,7 +9,17 @@ describe("Given a Serie Component", () => {
 
       const button = new ButtonComponent(container, className);
 
-      expect(container.querySelector("i")).not.toBeNull();
+      expect(button.querySelector("i")).not.toBeNull();
+    });
+  });
+  describe("When it´s instance with serie data", () => {
+    test("Then it should render the serie title", () => {
+      const className = "serie__title";
+      const container = document.createElement("h4");
+
+      const newSerie = newComponent(container, className);
+
+      expect(newSerie.querySelector("h4").toBe("serie__title"));
     });
   });
 });
