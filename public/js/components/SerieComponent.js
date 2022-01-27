@@ -23,7 +23,11 @@ class SerieComponent extends Component {
                 />
                 <h4 class="serie__title">${this.serie.name}</h4>
                 <p class="serie__info">${this.serie.creator} (${this.serie.year})</p>
+                <ul class="score">
+                </ul>
                 <i class="fas fa-times-circle icon--delete"></i>`;
+    this.element.querySelector();
+    parentDiv.insertBefore(newNode, sp2);
   }
 
   addListeners() {
