@@ -1,13 +1,13 @@
 import Component from "./Component.js";
 
 class RatingComponent extends Component {
-  score;
+  serie;
   constructor(parentElement, serie, actionOnClick) {
     super(parentElement, "score", "ul");
     this.serie = serie;
 
     this.generateHTML();
-    // this.addListeners(actionOnClick);
+    this.addListeners(actionOnClick);
   }
 
   generateHTML() {
@@ -34,10 +34,9 @@ class RatingComponent extends Component {
 
   addListeners(actionOnClick) {
     const liStars = this.element.children;
-    /* for (let i = 0; i < liStars.length; i++) {
-      
-    } */
-    // this.element.addEventListener("click", actionOnClick);
+    Array.from(liStars).forEach((star) =>
+      star.addEventListener("click", actionOnClick)
+    );
   }
 }
 
