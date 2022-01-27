@@ -7,7 +7,7 @@ const series = [
     poster:
       "https://m.media-amazon.com/images/M/MV5BZGJjYzhjYTYtMDBjYy00OWU1LTg5OTYtNmYwOTZmZjE3ZDdhXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg",
     watched: true,
-    score: 5,
+    score: 1,
     emmies: 21,
   },
   {
@@ -29,7 +29,7 @@ const series = [
     poster:
       "https://pics.filmaffinity.com/Mad_Men_Serie_de_TV-351490728-large.jpg",
     watched: true,
-    score: 5,
+    score: 2,
     emmies: 116,
   },
   {
