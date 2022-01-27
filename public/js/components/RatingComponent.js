@@ -37,7 +37,6 @@ class RatingComponent extends Component {
     /* for (let i = 0; i < liStars.length; i++) {
       
     } */
-
     // this.element.addEventListener("click", actionOnClick);
   }
 }
