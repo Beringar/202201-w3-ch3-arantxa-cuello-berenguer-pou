@@ -7,7 +7,7 @@ class RatingComponent extends Component {
     this.serie = serie;
 
     this.generateHTML();
-    this.addListeners(actionOnClick);
+    // this.addListeners(actionOnClick);
   }
 
   generateHTML() {

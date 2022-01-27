@@ -1,4 +1,5 @@
 import Component from "./Component.js";
+import RatingComponent from "./RatingComponent.js";
 
 class SerieComponent extends Component {
   serie;
@@ -26,8 +27,9 @@ class SerieComponent extends Component {
                 <ul class="score">
                 </ul>
                 <i class="fas fa-times-circle icon--delete"></i>`;
-    this.element.querySelector();
-    parentDiv.insertBefore(newNode, sp2);
+
+    // TODO: add actionOnClick whn creating RatingComponent here
+    new RatingComponent(this.element, this.serie);
   }
 
   addListeners() {
