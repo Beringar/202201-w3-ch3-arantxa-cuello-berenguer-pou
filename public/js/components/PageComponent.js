@@ -2,7 +2,6 @@ import seriesAPI from "../data/series.js";
 import Component from "./Component.js";
 import InfoComponent from "./InfoComponent.js";
 import SerieComponent from "./SerieComponent.js";
-import SeriesListComponent from "./SeriesList.js";
 
 class PageComponent extends Component {
   series = seriesAPI;
@@ -75,6 +74,7 @@ class PageComponent extends Component {
     });
   }
 
+  // action to pass to serie component
   removeSerie(id) {
     const serieFoundIndex = this.series.findIndex((serie) => serie.id === id);
     this.series.splice(serieFoundIndex, 1);
