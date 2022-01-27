@@ -1,17 +1,15 @@
 import Component from "./Component.js";
 
 describe("Given a Serie Component", () => {
-  describe("When it´s instance with series data", () => {
-    test("Then it should display the name of the serie", () => {
-      const container = document.createElement("li");
-      const serie = `
-        <img
-          class="serie__poster"
-          src="${this.serie.poster}"
-          alt="The ${this.serie.name} poster"
-        />`;
+  describe("When it´s instance with a delete button", () => {
+    test("Then it should render a button", () => {
+      const container = document.createElement("i");
 
-      new serieComponent(container, "li", serie);
+      const className = "icon--delete";
+
+      const button = new ButtonComponent(container, className);
+
+      expect(container.querySelector("i")).not.toBeNull();
     });
   });
 });
