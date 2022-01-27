@@ -44,7 +44,8 @@ img {
 .info {
   font-size: 0.9em;
 }
-.series-list {
+.series-list,
+.series-list--watched {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

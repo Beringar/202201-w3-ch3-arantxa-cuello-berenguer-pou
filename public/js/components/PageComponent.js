@@ -33,7 +33,7 @@ class PageComponent extends Component {
             <section class="info-watched">
             </section>
             <section class="watched-series">
-            <ul class="series-list">
+            <ul class="series-list--watched">
               </ul>
             </section>
           </section>
@@ -60,7 +60,7 @@ class PageComponent extends Component {
       ".pending-series .series-list"
     );
     const watchedSeriesContainer = this.element.querySelector(
-      ".watched-series .series-list"
+      ".watched-series .series-list--watched"
     );
     pendingSeriesContainer.innerHTML = "";
     watchedSeriesContainer.innerHTML = "";
@@ -68,8 +68,12 @@ class PageComponent extends Component {
       const container = serie.watched
         ? watchedSeriesContainer
         : pendingSeriesContainer;
-      new SerieComponent(container, "li", serie, () =>
-        this.removeSerie(serie.id)
+      new SerieComponent(
+        container,
+        "li",
+        serie,
+        () => this.removeSerie(serie.id),
+        () => null
       );
     });
   }

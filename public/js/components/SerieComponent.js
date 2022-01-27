@@ -3,12 +3,14 @@ import RatingComponent from "./RatingComponent.js";
 
 class SerieComponent extends Component {
   serie;
-  actionOnClick;
+  iconDeleteAction;
+  starsAction;
 
-  constructor(parentElement, htmlTag, serie, actionOnClick) {
+  constructor(parentElement, htmlTag, serie, iconDeleteaction, starsAction) {
     super(parentElement, "serie", htmlTag);
     this.serie = serie;
-    this.actionOnClick = actionOnClick;
+    this.iconDeleteAction = iconDeleteaction;
+    this.starsAction = starsAction;
 
     this.generateHTML(serie);
     this.addListeners();
@@ -28,14 +30,13 @@ class SerieComponent extends Component {
                 </ul>
                 <i class="fas fa-times-circle icon--delete"></i>`;
 
-    // TODO: add actionOnClick whn creating RatingComponent here
-    new RatingComponent(this.element, this.serie);
+    new RatingComponent(this.element, this.serie, this.starsAction);
   }
 
   addListeners() {
     this.element
       .querySelector(".icon--delete")
-      .addEventListener("click", this.actionOnClick);
+      .addEventListener("click", this.iconDeleteAction);
   }
 }
 
