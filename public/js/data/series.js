@@ -52,6 +52,26 @@ const series = [
     score: 0,
     emmies: 0,
   },
+  {
+    id: 6,
+    name: "Un bootcamp flamita, flamita!",
+    creator: "Mario No Test No Review",
+    year: 2022,
+    poster: "https://isdicoders.com/images/56870/default.png",
+    watched: true,
+    score: 3,
+    emmies: 0,
+  },
+  {
+    id: 7,
+    name: "¿Esto está perfeh, no...?",
+    creator: "Mario G. (aka THE CODE) ",
+    year: 2022,
+    poster: "https://isdicoders.com/images/56870/default.png",
+    watched: false,
+    score: 0,
+    emmies: 0,
+  },
 ];
 
 export default series;

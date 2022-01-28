@@ -42,7 +42,7 @@ class PageComponent extends Component {
     </div> 
     `;
 
-    this.renderSeriesList();
+    this.renderSeriesLists();
     this.renderInfoComponents();
   }
 
@@ -55,7 +55,7 @@ class PageComponent extends Component {
     new InfoComponent(infoWatchedContainer, "section", true);
   }
 
-  renderSeriesList() {
+  renderSeriesLists() {
     const pendingSeriesContainer = this.element.querySelector(
       ".pending-series .series-list"
     );
@@ -73,7 +73,10 @@ class PageComponent extends Component {
         "li",
         serie,
         () => this.removeSerie(serie.id),
-        () => null
+        () => {
+          this.renderInfoComponents();
+          this.renderSeriesLists();
+        }
       );
     });
   }
@@ -83,7 +86,7 @@ class PageComponent extends Component {
     const serieFoundIndex = this.series.findIndex((serie) => serie.id === id);
     this.series.splice(serieFoundIndex, 1);
     this.element.querySelector(`[data-serie="${id}"]`).remove();
-    this.renderSeriesList();
+    this.renderSeriesLists();
     this.renderInfoComponents();
   }
 }
