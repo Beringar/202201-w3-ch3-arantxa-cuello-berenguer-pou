@@ -1,13 +1,17 @@
+import seriesAPI from "../data/series.js";
 import Component from "./Component.js";
 
 class RatingComponent extends Component {
+  series = seriesAPI;
   serie;
+  actionOnClick;
   constructor(parentElement, serie, actionOnClick) {
     super(parentElement, "score", "ul");
     this.serie = serie;
+    this.actionOnClick = actionOnClick;
 
     this.generateHTML();
-    this.addListeners(actionOnClick);
+    this.addListeners();
   }
 
   generateHTML() {
@@ -32,11 +36,27 @@ class RatingComponent extends Component {
     }
   }
 
-  addListeners(actionOnClick) {
+  addListeners() {
     const liStars = this.element.children;
     Array.from(liStars).forEach((star) =>
-      star.addEventListener("click", actionOnClick)
+      star.addEventListener("click", () => {
+        this.setScore(star.dataset.starValue);
+      })
     );
+  }
+
+  setScore(starValue) {
+    const serieFoundIndex = this.series.findIndex(
+      (serie) => serie.id === this.serie.id
+    );
+    this.series[serieFoundIndex].score = starValue;
+    if (this.series[serieFoundIndex].score > 0) {
+      this.series[serieFoundIndex].watched = true;
+      this.actionOnClick();
+    } else {
+      this.renderStars(this.serie);
+      this.addListeners();
+    }
   }
 }
 
